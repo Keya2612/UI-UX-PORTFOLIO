@@ -256,7 +256,7 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 gap-4 pt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
             {[
               { label: 'Projects', value: String(portfolioData.projects.length) },
               { label: 'Certifications', value: String(portfolioData.certifications.length) },

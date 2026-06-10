@@ -87,7 +87,7 @@ export default function SidebarNav({
 }: SidebarNavProps) {
   return (
     <aside
-      className="fixed left-0 top-0 flex h-screen w-64 flex-col px-4 py-8"
+      className="hidden lg:flex fixed left-0 top-0 h-screen w-64 flex-col px-4 py-8"
       style={{
         background: '#0a0a0a',
         borderRight: '1px solid rgba(255,255,255,0.06)',

@@ -99,14 +99,33 @@ export default function PortfolioLayout() {
   const Component = currentSection?.component ?? HeroSection;
 
   return (
-    <div className="flex min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white">
       <SidebarNav
         activeSection={activeSection}
         onSectionChange={setActiveSection}
         sections={sections}
       />
 
-      <main className="ml-64 flex-1 overflow-y-auto">
+      <main className="flex-1 lg:ml-64 overflow-y-auto">
+        <div className="lg:hidden border-b border-white/10 bg-black/95 px-4 py-3">
+          <div className="flex gap-2 overflow-x-auto pb-1">
+            {sections.map((section) => (
+              <button
+                key={section.id}
+                onClick={() => setActiveSection(section.id)}
+                className={`rounded-full px-3 py-2 text-xs font-semibold whitespace-nowrap transition-colors duration-200 ${
+                  activeSection === section.id
+                    ? 'bg-purple-500 text-white'
+                    : 'bg-white/5 text-white/70 hover:bg-white/10'
+                }`}
+                type="button"
+              >
+                {section.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {activeSection === 'hero' ? (
           <Component />
         ) : (
